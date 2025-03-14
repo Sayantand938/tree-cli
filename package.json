@@ -1,0 +1,50 @@
+{
+  "name": "tree-cli",
+  "version": "1.0.0",
+  "description": "A CLI tool using TypeScript and ESM to generate tree like folder structure",
+  "bin": {
+    "tree-cli": "./bin/tree-cli.js"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./dist/cli.js",
+    "./commands/tree": "./dist/commands/tree.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "clean": "shx rm -rf dist",
+    "build": "npm run clean --silent && tsc && shx cp -r src/templates dist/",
+    "start": "node bin/tree-cli.js",
+    "dev": "tsx src/cli.ts",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "check-format": "prettier --check \"src/**/*.{ts,tsx}\"",
+    "validate": "npm run lint && npm run check-format"
+  },
+  "dependencies": {
+    "clipboardy": "^4.0.0",
+    "commander": "^13.1.0",
+    "conf": "^13.1.0",
+    "env-paths": "^3.0.0",
+    "shx": "^0.3.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@types/node": "^22.13.10",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.1"
+  }
+}
