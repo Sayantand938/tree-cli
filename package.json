@@ -1,25 +1,60 @@
 {
-  "name": "tree-cli",
-  "version": "1.0.0",
-  "description": "A CLI tool to generate directory tree structure",
-  "main": "lib/tree.js",
-  "bin": {
-    "tree-cli": "./bin/cli.js"
-  },
-  "files": [
-    "bin",
-    "lib"
-  ],
+  "name": "@sayantand938/tree-cli",
+  "version": "2.0.0",
+  "description": "Print a directory tree from the command line, like the Unix tree command.",
   "keywords": [
     "tree",
     "directory",
+    "folder",
+    "structure",
     "cli",
-    "folder-structure"
+    "cli-app",
+    "command-line",
+    "filesystem",
+    "outline"
   ],
-  "author": "Your Name",
   "license": "MIT",
+  "author": "Sayantan Das <sayantand938@gmail.com>",
+  "homepage": "https://github.com/SayantanD938/tree-cli#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SayantanD938/tree-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SayantanD938/tree-cli/issues"
+  },
+  "main": "lib/index.js",
+  "bin": {
+    "tree": "bin/cli.js",
+    "tree-cli": "bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "test": "node --test",
+    "test:watch": "node --test --watch",
+    "coverage": "node --test --experimental-test-coverage",
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "prepublishOnly": "npm test"
+  },
   "dependencies": {
-    "chalk": "^4.1.2",
-    "commander": "^11.0.0"
+    "commander": "^11.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

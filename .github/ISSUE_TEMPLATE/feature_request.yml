@@ -1,0 +1,44 @@
+name: Feature request
+description: Suggest an option, behaviour, or improvement
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a deliberately small tool, so a feature that can be built from
+        existing options may be declined. Describing the underlying problem
+        helps more than describing a specific flag.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do that is currently awkward or impossible?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What would you like the CLI or the library to do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Existing options, other tools, or workarounds, and why they fall short.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - label: This keeps the default output unchanged.
+          required: false
+        - label: I am willing to open a pull request for it.
+          required: false
